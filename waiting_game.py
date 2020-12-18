@@ -2,8 +2,6 @@ import time
 import random
 import math as m
 
-score_list = []
-
 def waiting_game():
     goal = random.randrange(2,5,1)
     print("You're goal is %d seconds" % goal)
@@ -23,14 +21,4 @@ def waiting_game():
         print("Wow! You were spot on! Nice job.")
         print("(You're elapsed time was %.2f seconds)" % elapsed_time)
     return score
-res = waiting_game()
-
-def display_score(score_list, score):
-    if len(score_list) < 2:
-        score_list.append(score)
-        return score_list.sort(reverse=True)
-    score_list.append(score)
-    print(score_list)
-    score_list.sort(reverse=True)
-    return score_list[0:3]
-print(display_score(score_list, res))
+waiting_game()
